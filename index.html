@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoices</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/665042679c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./styles.css">
     <link rel="stylesheet" href="./tableSort.css">
+    
 </head>
 
 <body>
@@ -21,10 +25,10 @@
     </header>
 
     <main>
-        <section id=invoiceTable>
+        <section>
             <h2 id="tableTitle">Invoices</h2>
-            <table class="table table-sortable">
-                <thead>
+            <table class="table table-sortable" id="invoice_table">
+                
                     <tr>
                         <th>Type</th>
                         <th>Account Name</th>
@@ -32,8 +36,6 @@
                         <th>Currency</th>
                         <th>Balance</th>
                     </tr>
-                </thead>
-
             </table>
 
         </section>
@@ -41,8 +43,9 @@
     </main>
 
     <script src="./tableSort.js"></script>
+    <script src="./invoiceTable.js"></script>
+
+
 </body>
 </html>
 
-<i class="fas fa-sort-down"></i>
-<i class="fas fa-times"></i>
