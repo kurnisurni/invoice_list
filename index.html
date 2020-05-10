@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoices</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/665042679c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./tableSort.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>All invoices - 2016</h1>
+        <nav>
+        <i class="fas fa-ellipsis-h"></i>
+        <i class="fas fa-bars"></i>
+        </nav>      
+    </header>
+
+    <main>
+        <section id=invoiceTable>
+            <h2 id="tableTitle">Invoices</h2>
+            <table class="table table-sortable">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Account Name</th>
+                        <th>Status</th>
+                        <th>Currency</th>
+                        <th>Balance</th>
+                    </tr>
+                </thead>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="./tableSort.js"></script>
+</body>
+</html>
+
+<i class="fas fa-sort-down"></i>
+<i class="fas fa-times"></i>
