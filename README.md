@@ -11,4 +11,5 @@ When clicking an invoice it should open up a detailed view of that selected invo
 ## Notes from applicant
 
 Build with Vue.js with bootstrap and custom css
+
 To run the program, by VSCode open with a live server. Thanks!
