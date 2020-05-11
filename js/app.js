@@ -26,6 +26,9 @@ init = function () {
 
             // detail panel shown/not
             detailPanelShown: false,
+
+            sortBy: '',
+            sortOrder: 'desc',
         },
         
         mounted: function () {
@@ -37,6 +40,62 @@ init = function () {
             sortedInvoices: function () {
                 // copy invoices so, the original doesn't change the order
                 invoices = this.invoices.slice()
+                
+                // sorting invoices
+                sortBy = this.sortBy
+                sortOrder = this.sortOrder
+                invoices.sort((a, b) => {
+                    // sortBy use because balance needs to be sorted by numbers
+                    if (sortBy == 'balance') {
+                        // remove $ as currency name
+                        balanceA = a['balance'].replace('$', '')
+                        balanceB = b['balance'].replace('$', '')
+
+                        // remove ',' as thousand sign
+                        balanceA = balanceA.replace(',', '')
+                        balanceB = balanceB.replace(',', '')
+
+                        // parse result to float
+                        balanceA = parseFloat(balanceA)
+                        balanceB = parseFloat(balanceB)
+                        
+                        if (sortOrder == 'asc') {
+                            if (balanceA > balanceB) {
+                                return 1
+                            } else if (balanceA < balanceB) {
+                                return -1
+                            } else {
+                                return 0
+                            }
+                        } else {
+                            if (balanceA > balanceB) {
+                                return -1
+                            } else if (balanceA < balanceB) {
+                                return 1
+                            } else {
+                                return 0
+                            }
+                        }
+                    } else {
+                        if (sortOrder == 'asc') {
+                            if (a[sortBy] > b[sortBy]) {
+                                return 1
+                            } else if (a[sortBy] < b[sortBy]) {
+                                return -1
+                            } else {
+                                return 0
+                            }
+                        } else {
+                            if (a[sortBy] > b[sortBy]) {
+                                return -1
+                            } else if (a[sortBy] < b[sortBy]) {
+                                return 1
+                            } else {
+                                return 0
+                            }
+                        }
+                    }
+                })
                 return invoices
             },
         },    
