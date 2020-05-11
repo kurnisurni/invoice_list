@@ -16,19 +16,15 @@
 
 <body>
 
-    <header>
+    <nav class="nav-table">
         <h1>All invoices - 2016</h1>
-        <nav>
         <i class="fas fa-ellipsis-h"></i>
-        <i class="fas fa-bars"></i>
-        </nav>      
-    </header>
+    </nav>      
 
-    <main>
+        <!-- TABLE -->
         <section>
             <h2 id="tableTitle">Invoices</h2>
-            <table class="table table-sortable" id="invoice_table">
-                
+            <table class="table" id="invoice-table"> 
                     <tr>
                         <th>Type</th>
                         <th>Account Name</th>
@@ -37,15 +33,21 @@
                         <th>Balance</th>
                     </tr>
             </table>
-
         </section>
 
-    </main>
+        <!-- DETAIL SIDE -->
+        <aside class="detail-side">
+            <nav class="nav-side">
+            <i class="fas fa-bars"></i>
+            </nav>
+            <div class="cover-art"></div>
+            <div class="account-name-title"></div>
+            <div class="account-details"></div>
+            <i class="fas fa-times"></i>
+        </aside>
 
-    <script src="./tableSort.js"></script>
+
     <script src="./invoiceTable.js"></script>
-
-
 </body>
 </html>
 

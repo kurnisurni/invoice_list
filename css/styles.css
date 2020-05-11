@@ -1,0 +1,39 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+
+  body {
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    background-color:white;
+    color: slategray;
+  }
+
+  .nav-table {
+    color: rgb(5, 141, 219);
+    position: fixed;
+    display: initial;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-side {
+    background-color: rgb(233, 239, 241);
+    padding: 10px 20px;
+    z-index: 10;
+  }
+
+  i {
+    cursor: pointer;
+  }
+
+
+  .detail-side {
+      background-image: url("/img/tower.png");
+  }
+
+ 
