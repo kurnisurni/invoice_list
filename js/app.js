@@ -123,6 +123,21 @@ init = function () {
                 this.detailPanelShown = false
             },
 
+            sort: function (sortBy) {
+                // if sort is different, we set the new one
+                if (this.sortBy != sortBy) {
+                    this.sortBy = sortBy
+                    this.sortOrder = 'asc'
+                } else {
+                    // if sort is same, toggle desc/asc
+                    if (this.sortOrder == 'asc') {
+                        this.sortOrder = 'desc'
+                    } else {
+                        this.sortOrder = 'asc'
+                    }
+                }
+            },
+
         }
     })
 }

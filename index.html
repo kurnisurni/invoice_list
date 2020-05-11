@@ -32,11 +32,22 @@
                         <table class="table table-borderless table-hover">
                             <thead>
                                 <tr>
-                                    <th class="col-title">Type</th>
-                                    <th class="col-title">Account Name</th>
-                                    <th class="col-title">Status</th>
-                                    <th class="col-title">Currency</th>
-                                    <th class="col-title">Balance</th>
+                                    <th class="col-title" @click="sort('type')">Type
+                                        <!-- up down arrow appear when sorting -->
+                                        <small v-show="sortBy == 'type'">{{ sortOrder == 'desc' ? '&#9660;' : '&#9650;' }}</small>                                        
+                                    </th>
+                                    <th class="col-title" @click="sort('accountName')">Account Name
+                                        <small v-show="sortBy == 'accountName'">{{ sortOrder == 'desc' ? '&#9660;' : '&#9650;' }}</small>
+                                    </th>
+                                    <th class="col-title" @click="sort('status')">Status
+                                        <small v-show="sortBy == 'status'">{{ sortOrder == 'desc' ? '&#9660;' : '&#9650;' }}</small>
+                                    </th>
+                                    <th class="col-title" @click="sort('currency')">Currency
+                                        <small v-show="sortBy == 'currency'">{{ sortOrder == 'desc' ? '&#9660;' : '&#9650;' }}</small>
+                                    </th>
+                                    <th class="col-title" @click="sort('balance')">Balance
+                                        <small v-show="sortBy == 'balance'">{{ sortOrder == 'desc' ? '&#9660;' : '&#9650;' }}</small>
+                                    </th>
                                 </tr>
                             </thead>
 
