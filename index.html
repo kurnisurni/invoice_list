@@ -20,16 +20,16 @@
         <div class="main">
 
             <!-- left side -->
-            <section class="left-side">
-                <h2 class="title font-weight-medium">All invoices - 2016</h2>
+            <section class="px-4 py-4">
+                <h2 class="mt-0 mb-4 text-primary font-weight-medium">All invoices - 2016</h2>
 
-                <div class="left-content">
+                <div class="card shadow-sm border-0 rounded-0">
                     <!-- invoice table -->
-                    <div class="left-header font-weight-medium">
+                    <div class="card-header text-secondary font-weight-medium bg-light border-0">
                         Invoices
                     </div>
-                    <div class="left-body">
-                        <table class="table">
+                    <div class="card-body px-2 py-0 table-responsive">
+                        <table class="table table-borderless table-hover">
                             <thead>
                                 <tr>
                                     <th class="col-title">Type</th>
@@ -43,7 +43,9 @@
                             <tbody>
                                 <!-- loop array invoices with v-for -->
                                 <!-- click to call showDetailPanel function with that invoice parameter -->
-                                <tr v-for="invoice in sortedInvoices" @click="showDetailPanel(invoice)">
+                                <!-- then if the certain detailInvoice is active, will be blue -->
+                                <tr v-for="invoice in sortedInvoices" @click="showDetailPanel(invoice)"
+                                :class="detailPanelShown && invoice == detailInvoice ? 'bg-light border-primary' : ''">
 
                                     <td>{{ invoice.type }}</td>
                                     <td>{{ invoice.accountName }}</td>
@@ -60,19 +62,19 @@
         </div>
 
         <!-- right side -->
-        <aside class="sidenav">
+        <aside class="sidenav bg-tower d-flex justify-content-center align-items-center">
 
-            <!-- invoice detail panel appear, if variable detailPanelShown == true -->
-            <div class="detailPanelShown">
-                <img src="img/trump.png" alt="trump says creating job" class="panel-img">
+            <!-- detail panel appear, if variable detailPanelShown == true -->
+            <div v-show="detailPanelShown" class="card bg-transparent border-0 rounded-0">
+                <img src="img/trump.png" alt="trump says creating job" class="card-img-top rounded-0">
 
-                <div class="panel-body">
-                    <h6 class="panel-title font-weight-medium">{{ detailInvoice.accountName }}</h6>
+                <div class="card-body bg-white shadow-lg py-3">
+                    <h6 class="text-primary font-weight-medium mb-3">{{ detailInvoice.accountName }}</h6>
 
-                    <div class="panel-content">
+                    <div class="row">
 
-                        <div class="panel-left">
-                            <dl class="panel-content-details">
+                        <div class="col-5">
+                            <dl class="mb-0">
                                 <dt>TYPE</dt>
                                 <dd>{{ detailInvoice.type }}</dd>
 
@@ -84,8 +86,8 @@
                             </dl>
                         </div>
 
-                        <div class="panel-right">
-                            <dl class="panel-content-details">
+                        <div class="col-7">
+                            <dl class="mb-0">
                                 <dt>ACCOUNT NAME</dt>
                                 <dd>{{ detailInvoice.accountName }}</dd>
 
@@ -100,10 +102,10 @@
                     </div>
                 </div>
 
-                <div class="panel-footer">
+                <div class="card-footer bg-transparent border-0 text-center">
                     <!-- button to hide panel -->
-                    <button class="btn btn-link" @click="hideDetailPanel()">
-                        <h1 class="close-symbol">&times;</h1>
+                    <button class="btn btn-link text-decoration-none" @click="hideDetailPanel()">
+                        <h1 class="text-white">&times;</h1>
                     </button>
                 </div>
             </div>

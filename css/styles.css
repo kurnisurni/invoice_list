@@ -35,6 +35,26 @@ thead tr th {
   cursor: pointer;
 }
 
+.sidenav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 100%;
+  background-image: url('../img/tower.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.sidenav .card {
+  font-size: .7rem;
+  width: 300px;
+}
+.sidenav .card dt {
+  font-size: .5rem;
+  font-weight: 800 !important;
+}
+
  
 
  
