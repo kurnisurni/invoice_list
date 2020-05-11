@@ -1,53 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoices</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/665042679c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./tableSort.css">
-    
+
+     <!-- bootstrap css -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">    
 </head>
 
 <body>
 
-    <nav class="nav-table">
-        <h1>All invoices - 2016</h1>
-        <i class="fas fa-ellipsis-h"></i>
-    </nav>      
+    <div id="app">
+        <div class="main">
 
-        <!-- TABLE -->
-        <section>
-            <h2 id="tableTitle">Invoices</h2>
-            <table class="table" id="invoice-table"> 
-                    <tr>
-                        <th>Type</th>
-                        <th>Account Name</th>
-                        <th>Status</th>
-                        <th>Currency</th>
-                        <th>Balance</th>
-                    </tr>
-            </table>
-        </section>
+            <!-- left side -->
+            <section class="left-side">
+                <h2 class="title">All invoices - 2016</h2>
 
-        <!-- DETAIL SIDE -->
-        <aside class="detail-side">
-            <nav class="nav-side">
-            <i class="fas fa-bars"></i>
-            </nav>
-            <div class="cover-art"></div>
-            <div class="account-name-title"></div>
-            <div class="account-details"></div>
-            <i class="fas fa-times"></i>
+                <div class="left-content">
+                    <!-- invoice table -->
+                    <div class="left-header">
+                        Invoices
+                    </div>
+                    <div class="left-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="col-title">Type</th>
+                                    <th class="col-title">Account Name</th>
+                                    <th class="col-title">Status</th>
+                                    <th class="col-title">Currency</th>
+                                    <th class="col-title">Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <td class="invoice-type"></td>
+                                <td class="invoice-accountName"></td>
+                                <td class="invoice-status"></td>
+                                <td class="invoice-currency"></td>
+                                <td class="invoice-balance"></td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- right side -->
+        <aside class="sidenav">
+
+            <!-- invoice detail panel if show true -->
+            <div class="detail-panel">
+                <img src="img/trump.png" alt="trump says creating job" class="panel-img">
+
+                <div class="panel-body">
+                    <h6 class="panel-title">accountName</h6>
+
+                    <div class="panel-content">
+
+                        <div class="panel-left">
+                            <dl class="panel-content-details">
+                                <dt>TYPE</dt>
+                                <dd>Savings</dd>
+
+                                <dt>STATUS</dt>
+                                <dd>Active</dd>
+
+                                <dt>BALANCE</dt>
+                                <dd>$10,998.10</dd>
+                            </dl>
+                        </div>
+
+                        <div class="panel-right">
+                            <dl class="panel-content-details">
+                                <dt>ACCOUNT NAME</dt>
+                                <dd></dd>
+
+                                <dt>CURRENCY</dt>
+                                <dd>USD</dd>
+
+                                <dt>NOTES</dt>
+                                <dd></dd>
+                            </dl>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="panel-footer">
+                    <!-- button to hide panel -->
+                    <button class="btn btn-link">
+                        <h1 class="close-btn">&times;</h1>
+                    </button>
+                </div>
+            </div>
         </aside>
+    </div>
 
-
-    <script src="./invoiceTable.js"></script>
+    <!-- include vue js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- include custom js -->
+    <script src="js/app.js"></script>
 </body>
+
 </html>
 
+         
+
+        
