@@ -40,11 +40,14 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <td class="invoice-type"></td>
-                                <td class="invoice-accountName"></td>
-                                <td class="invoice-status"></td>
-                                <td class="invoice-currency"></td>
-                                <td class="invoice-balance"></td>
+                                <!-- loop array invoices with v-for -->
+                                <tr v-for="invoice in sortedInvoices">
+                                    <td>{{ invoice.type }}</td>
+                                    <td>{{ invoice.accountName }}</td>
+                                    <td>{{ invoice.status }}</td>
+                                    <td>{{ invoice.currency }}</td>
+                                    <td>{{ invoice.balance }}</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
