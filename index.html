@@ -21,11 +21,11 @@
 
             <!-- left side -->
             <section class="left-side">
-                <h2 class="title">All invoices - 2016</h2>
+                <h2 class="title font-weight-medium">All invoices - 2016</h2>
 
                 <div class="left-content">
                     <!-- invoice table -->
-                    <div class="left-header">
+                    <div class="left-header font-weight-medium">
                         Invoices
                     </div>
                     <div class="left-body">
@@ -39,9 +39,12 @@
                                     <th class="col-title">Balance</th>
                                 </tr>
                             </thead>
+
                             <tbody>
                                 <!-- loop array invoices with v-for -->
-                                <tr v-for="invoice in sortedInvoices">
+                                <!-- click to call showDetailPanel function with that invoice parameter -->
+                                <tr v-for="invoice in sortedInvoices" @click="showDetailPanel(invoice)">
+
                                     <td>{{ invoice.type }}</td>
                                     <td>{{ invoice.accountName }}</td>
                                     <td>{{ invoice.status }}</td>
@@ -49,6 +52,7 @@
                                     <td>{{ invoice.balance }}</td>
                                 </tr>
                             </tbody>
+
                         </table>
                     </div>
                 </div>
@@ -58,12 +62,12 @@
         <!-- right side -->
         <aside class="sidenav">
 
-            <!-- invoice detail panel if show true -->
-            <div class="detail-panel">
+            <!-- invoice detail panel appear, if variable detailPanelShown == true -->
+            <div class="detailPanelShown">
                 <img src="img/trump.png" alt="trump says creating job" class="panel-img">
 
                 <div class="panel-body">
-                    <h6 class="panel-title">{{ detailInvoice.accountName }}</h6>
+                    <h6 class="panel-title font-weight-medium">{{ detailInvoice.accountName }}</h6>
 
                     <div class="panel-content">
 

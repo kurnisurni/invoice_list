@@ -48,6 +48,16 @@ init = function () {
                     // then input the json to invoices
                     .then(json => {this.invoices = json})
             },
+            showDetailPanel: function (invoice) {
+                // set invoice detail from the parameter
+                this.detailInvoice = invoice
+                // set detailPanelShown = true, so detail panel appears.
+                this.detailPanelShown = true
+            },
+            hideDetailPanel: function () {
+                // set detailPanelShown = false to hide detail panel
+                this.detailPanelShown = false
+            },
 
         }
     })

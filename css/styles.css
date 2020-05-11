@@ -1,16 +1,39 @@
+[v-cloak] {
+  display: none;
+}
+
 * {
     box-sizing: border-box;
+    color: rgb(17, 16, 16) !important;
     font-family: 'Roboto', sans-serif;
     font-weight: 500 !important;
   }
 
-  .title {
-    color: rgb(5, 141, 219);
-    position: fixed;
-    display: initial;
-    align-items: center;
-    justify-content: space-between;
-  }
+#app {
+  height: 100%;
+  height: 100vh;
+}
+
+.font-weight-medium, .col-title {
+  font-weight: 600 !important;
+}
+
+.main {
+  width: calc(100vw - 470px);
+}
+
+.table {
+  font-size: .7rem;
+}
+
+tbody tr {
+  cursor: pointer;
+  border-left: 2px solid transparent !important;
+}
+
+thead tr th {
+  cursor: pointer;
+}
 
  
 
