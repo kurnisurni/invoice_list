@@ -63,33 +63,33 @@
                 <img src="img/trump.png" alt="trump says creating job" class="panel-img">
 
                 <div class="panel-body">
-                    <h6 class="panel-title">accountName</h6>
+                    <h6 class="panel-title">{{ detailInvoice.accountName }}</h6>
 
                     <div class="panel-content">
 
                         <div class="panel-left">
                             <dl class="panel-content-details">
                                 <dt>TYPE</dt>
-                                <dd>Savings</dd>
+                                <dd>{{ detailInvoice.type }}</dd>
 
                                 <dt>STATUS</dt>
-                                <dd>Active</dd>
+                                <dd>{{ detailInvoice.status }}</dd>
 
                                 <dt>BALANCE</dt>
-                                <dd>$10,998.10</dd>
+                                <dd>{{ detailInvoice.balance }}</dd>
                             </dl>
                         </div>
 
                         <div class="panel-right">
                             <dl class="panel-content-details">
                                 <dt>ACCOUNT NAME</dt>
-                                <dd></dd>
+                                <dd>{{ detailInvoice.accountName }}</dd>
 
                                 <dt>CURRENCY</dt>
-                                <dd>USD</dd>
+                                <dd>{{ detailInvoice.currency }}</dd>
 
                                 <dt>NOTES</dt>
-                                <dd></dd>
+                                <dd>{{ detailInvoice.notes }}</dd>
                             </dl>
                         </div>
 
@@ -98,8 +98,8 @@
 
                 <div class="panel-footer">
                     <!-- button to hide panel -->
-                    <button class="btn btn-link">
-                        <h1 class="close-btn">&times;</h1>
+                    <button class="btn btn-link" @click="hideDetailPanel()">
+                        <h1 class="close-symbol">&times;</h1>
                     </button>
                 </div>
             </div>

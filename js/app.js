@@ -11,9 +11,11 @@ init = function () {
     _app = new Vue({
         el: '#app',
         data: {
+
             // array invoices from JSON
             invoices: [],
-            // invoice details that are clicked, filled with default / dummy data
+
+            // invoice details that are clicked, filled with default data/dummy 
             detailInvoice: {
                 "type":"Checking",
                 "accountName":"1267451**** - WOLFE",
@@ -22,6 +24,7 @@ init = function () {
                 "balance":"$6,266.33"
             },
         },
+        
         mounted: function () {
             // when vue.js is mounted / loaded get a list of invoices from JSON
             this.fetchInvoices()
@@ -31,6 +34,7 @@ init = function () {
             sortedInvoices: function () {
                 // copy invoices so, the original doesn't change the order
                 invoices = this.invoices.slice()
+                return invoices
             },
         },    
 
