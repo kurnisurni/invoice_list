@@ -23,7 +23,7 @@
 }
 
 .table {
-  font-size: .7rem;
+  font-size: .9rem;
 }
 
 tbody tr {
@@ -47,14 +47,18 @@ thead tr th {
 }
 
 .sidenav .card {
-  font-size: .7rem;
+  font-size: .9rem;
   width: 300px;
 }
 .sidenav .card dt {
-  font-size: .5rem;
+  font-size: .7rem;
   font-weight: 800 !important;
 }
 
- 
-
+/*responsive needs to be develop*/
+@media only screen and (max-width: 768px) {
+  .main {width: 100%;}
+  .table {width: 60%;}
+  .sidenav {width: 30%;}
+  }
  
