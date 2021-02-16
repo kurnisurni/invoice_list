@@ -16,3 +16,4 @@ The application you will be creating is an invoicing app that contains a table o
 When clicking an invoice it should open up a detailed view of that selected invoice.
 
 
+To check the result https://kurnisurni.github.io/invoice_list/
